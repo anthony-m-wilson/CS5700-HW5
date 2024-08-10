@@ -1,9 +1,10 @@
 package org.example.email
 
+import org.example.Invalid
 import org.example.State
 
-class EmailInitial: State {
+class EmailInitial : State {
     override fun next(char: String): State {
-        TODO("Not yet implemented")
+        return if (char == "@" || char == " ") Invalid() else Part1()
     }
 }

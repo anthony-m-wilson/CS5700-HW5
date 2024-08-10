@@ -1,9 +1,13 @@
 package org.example.password
 
+import org.example.Invalid
 import org.example.State
 
-class PasswordInitial: State {
+class PasswordInitial : State {
     override fun next(char: String): State {
-        TODO("Not yet implemented")
+        if (char in "A".."Z") return Capital()
+        if (char in "a".."z") return Maybe()
+        if (char in "!@#\$%&*") return Special()
+        return Invalid()
     }
 }

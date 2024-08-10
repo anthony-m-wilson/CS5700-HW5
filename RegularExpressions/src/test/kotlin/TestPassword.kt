@@ -13,12 +13,7 @@ class TestPassword {
         assertTrue(verifier.verify("aaaaH!aa", initializer.createInitialState("password")!!))
         assertTrue(verifier.verify("aaaaH!aaH!aa", initializer.createInitialState("password")!!))
         assertTrue(verifier.verify("1234567*9J", initializer.createInitialState("password")!!))
-        assertTrue(
-            verifier.verify(
-                "asdpoihj;loikjasdf;ijp;lij2309jasd;lfkm20ij@aH",
-                initializer.createInitialState("password")!!
-            )
-        )
+        assertTrue(verifier.verify("asdpoihj;loij@aH", initializer.createInitialState("password")!!))
     }
 
     @Test

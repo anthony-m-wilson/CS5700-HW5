@@ -5,9 +5,10 @@ import org.example.State
 
 class Capital : State {
     override fun next(char: String): State {
-        if (char in "!@#\$%&*") return SpecialEnding()
+        if (char in "!@#\$%&*;") return SpecialEnding()
         if (char in "A".."Z") return Capital()
         if (char in "a".."z") return Capital()
+        if (char in "1".."9") return Capital()
         return Invalid()
     }
 }

@@ -7,7 +7,8 @@ class Special : State {
     override fun next(char: String): State {
         if (char in "A".."Z") return PasswordValid()
         if (char in "a".."z") return Special()
-        if (char in "!@#\$%&*") return Special()
+        if (char in "!@#\$%&*;") return Special()
+        if (char in "1".."9") return Special()
         return Invalid()
     }
 }
